@@ -3,3 +3,50 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+
+.home-screen {
+  width: 100%;
+  height: 100vh;
+}
+
+.beer {
+  height: 33%;
+}
+
+.beer-pic {
+  height: 60%;
+  width: 100%;
+}
+
+.home-screen img {
+  width: 100%;
+  height: 100%;
+}
+
+.beer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  height: 40%;
+}
+
+.beer-info h1 {
+  font-size:  1.5em;
+}
+
+.one-beer {
+  height: 70vh;
+}
+
+.one-beer img{
+  width: 80px;
+  height: 250px;
+  margin-top: 20px;
+}
+
+.all-the-beers {
+  
+}
