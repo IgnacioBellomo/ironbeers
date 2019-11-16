@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
-
+import {Link} from 'react-router-dom';
 
 export default class AllBeers extends Component {
 
@@ -14,34 +14,54 @@ export default class AllBeers extends Component {
     }
 
     componentDidMount(){
-        let page = `https://api.punkapi.com/v2/beers?page=${this.props.match.params.id}&per_page=24`;
+        this.getAllBeer();
+    }
+
+    getAllBeer = () => {
+        // This code uses the original punkAPI, allowing for browsing of a larger beer selection displaying 24 per page.
+        // The punkAPI doesn't allow for post, so I had to comment it out in order to implement the newBeer route
+
+        // console.log(this.state.page)
+        let page;
+        let pageNum;
+        // if(!this.state.page){
+        //     pageNum = 1
+        // }else {
+        //     pageNum = this.state.page
+        // }
+        // page = `https://api.punkapi.com/v2/beers?page=${pageNum}&per_page=24`;   
+        page="https://ih-beers-api2.herokuapp.com/beers";
         axios.get(page)
         .then((theResult)=>{     
         let x = theResult.data;
-        this.setState({beers: x, page: this.props.match.params.id, ready: true})
+        this.setState({beers: x, page: pageNum, ready: true})
         })
         .catch((err)=>{
         console.log(err);
         })
     }
 
+    //PunkAPI page switching buttons
+    // pageSwitch = (direction) =>{
+    //     this.setState({
+    //         page: this.state.page + direction,
+    //     }, () => {
+    //         this.getAllBeer();
+    //     })
+    // }
+
     displayBeers = () => {
         return this.state.beers.map((eachBeer) => {
+            console.log(eachBeer._id)
             return (
-
-                // <div class="card" style="width: 18rem;">
-                //     <img src="..." class="card-img-top" alt="...">
-                //     <div class="card-body">
-                //         <h5 class="card-title">Card title</h5>
-                //         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                //         <a href="#" class="btn btn-primary">Go somewhere</a>
-                //     </div>
-                // </div>
-            <div className="card col-6 one-beer">
-                <img src={eachBeer.image_url} className="card-img-top mx-auto" />
+            <div className="card col-6 one-beer" key={eachBeer._id}>
+                <img src={eachBeer.image_url} className="card-img-top mx-auto" alt={"Picture of " + eachBeer.name} />
                 <div className="card-body">
                     <h5>{eachBeer.name}</h5>
                     <h6>{eachBeer.tagline}</h6>
+                    <Link to = {`/beers/${eachBeer._id}`}>
+                            <button className="btn btn-danger btn-sm">Check it out!</button>
+                    </Link>
                 </div>
             </div>
             )
@@ -50,12 +70,29 @@ export default class AllBeers extends Component {
 
     render() {
         if(this.state.ready) {
+            console.log(this.state.beers);
             return (
+                <div>
+                <nav className="navbar navbar-dark bg-primary">
+                <Link to = {'/'}>
+                    <button className="btn btn-outline-success" type="button">Home</button>
+                </Link>
+                </nav>
                 <div className="container-fluid all-the-beers">
                     <div className="row">
                         {this.displayBeers()}
                     </div>
-                </div>     
+                    {/*
+                    buttons to go to the next or previous page when browsing the punkAPI selection of beers
+                    */}
+                    {/* <div className="row">
+                        { this.state.page > 1 &&
+                            <button type="button" className="btn btn-secondary btn-sm" onClick={() => {this.pageSwitch(-1)}}>Previous page</button>
+                        }
+                            <button type="button" className="btn btn-primary btn-sm" onClick={() => {this.pageSwitch(1)}}>Next page</button>
+                    </div> */}
+                </div>   
+                </div>  
             )
         } else{
             return(<h1> Pouring...</h1>)
