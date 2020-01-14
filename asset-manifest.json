@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/ironbeers/static/css/main.b50fac23.chunk.css",
-    "main.js": "/ironbeers/static/js/main.9ce886a6.chunk.js",
-    "main.js.map": "/ironbeers/static/js/main.9ce886a6.chunk.js.map",
+    "main.css": "/ironbeers/static/css/main.65a1cd1e.chunk.css",
+    "main.js": "/ironbeers/static/js/main.e7af898b.chunk.js",
+    "main.js.map": "/ironbeers/static/js/main.e7af898b.chunk.js.map",
     "runtime-main.js": "/ironbeers/static/js/runtime-main.12166204.js",
     "runtime-main.js.map": "/ironbeers/static/js/runtime-main.12166204.js.map",
-    "static/css/2.833dd627.chunk.css": "/ironbeers/static/css/2.833dd627.chunk.css",
-    "static/js/2.6b53b15b.chunk.js": "/ironbeers/static/js/2.6b53b15b.chunk.js",
-    "static/js/2.6b53b15b.chunk.js.map": "/ironbeers/static/js/2.6b53b15b.chunk.js.map",
+    "static/css/2.9720967d.chunk.css": "/ironbeers/static/css/2.9720967d.chunk.css",
+    "static/js/2.cbc1e86a.chunk.js": "/ironbeers/static/js/2.cbc1e86a.chunk.js",
+    "static/js/2.cbc1e86a.chunk.js.map": "/ironbeers/static/js/2.cbc1e86a.chunk.js.map",
     "index.html": "/ironbeers/index.html",
-    "precache-manifest.da14e3f94ad3650182c566a5099ab917.js": "/ironbeers/precache-manifest.da14e3f94ad3650182c566a5099ab917.js",
+    "precache-manifest.6a80d8bc631c514d72a4ccd947a0370c.js": "/ironbeers/precache-manifest.6a80d8bc631c514d72a4ccd947a0370c.js",
     "service-worker.js": "/ironbeers/service-worker.js",
-    "static/css/2.833dd627.chunk.css.map": "/ironbeers/static/css/2.833dd627.chunk.css.map",
-    "static/css/main.b50fac23.chunk.css.map": "/ironbeers/static/css/main.b50fac23.chunk.css.map"
+    "static/css/2.9720967d.chunk.css.map": "/ironbeers/static/css/2.9720967d.chunk.css.map",
+    "static/css/main.65a1cd1e.chunk.css.map": "/ironbeers/static/css/main.65a1cd1e.chunk.css.map"
   }
 }

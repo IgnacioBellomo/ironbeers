@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ironbeers/precache-manifest.da14e3f94ad3650182c566a5099ab917.js"
+  "/ironbeers/precache-manifest.6a80d8bc631c514d72a4ccd947a0370c.js"
 );
 
 self.addEventListener('message', (event) => {
