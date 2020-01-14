@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "08b363cf09368f03316249a268c11af8",
+    "revision": "5c39b86e120d6e218fb5cbcc68a5889b",
     "url": "/ironbeers/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ironbeers/static/css/2.833dd627.chunk.css"
   },
   {
-    "revision": "704384b3d176b4f88d43",
+    "revision": "75997cc10365062120a4",
     "url": "/ironbeers/static/css/main.65a1cd1e.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ironbeers/static/js/2.cbc1e86a.chunk.js"
   },
   {
-    "revision": "704384b3d176b4f88d43",
-    "url": "/ironbeers/static/js/main.e7af898b.chunk.js"
+    "revision": "75997cc10365062120a4",
+    "url": "/ironbeers/static/js/main.3df86ca0.chunk.js"
   },
   {
     "revision": "8dac35deaa6276a18e5d",
