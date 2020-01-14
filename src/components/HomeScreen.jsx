@@ -10,7 +10,7 @@ export default class HomeScreen extends Component {
                 <h1 className="page-title">Ironbeers</h1>
                 <div className="row">
                     <div className="col-12 col-lg-6 beer-pic">
-                        <img src="../images/beers.png" alt="all beers"/>
+                        <img src="./images/beers.png" alt="all beers"/>
                         <div>
                         <Link to = {"/beers"}>
                             <button className="btn btn-secondary btn-sm">All beer</button>
@@ -20,7 +20,7 @@ export default class HomeScreen extends Component {
 
                     </div>
                     <div className="col-12 col-lg-6 beer-pic">
-                        <img src="../images/random-beer.png" alt="random beers"/>
+                        <img src="./images/random-beer.png" alt="random beers"/>
                         <div>
                         <Link to = {"/beers/random"}>
                             <button className="btn btn-secondary btn-sm">Random beer</button>
@@ -30,7 +30,7 @@ export default class HomeScreen extends Component {
                     </div>
                     <div className="col-0 col-lg-3"></div>
                     <div className="col-12 col-lg-6 beer-pic">
-                        <img src="../images/new-beer.png" alt="new beers"/>
+                        <img src="./images/new-beer.png" alt="new beers"/>
                         <div>
                         <Link to = {"/newbeer"}>
                         <button className="btn btn-secondary btn-sm">New beer</button>
