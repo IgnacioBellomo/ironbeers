@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
@@ -54,16 +54,19 @@ export default class AllBeers extends Component {
         return this.state.beers.map((eachBeer) => {
             console.log(eachBeer._id)
             return (
-            <div className="card col-6 one-beer" key={eachBeer._id}>
-                <img src={eachBeer.image_url} className="card-img-top mx-auto" alt={"Picture of " + eachBeer.name} />
-                <div className="card-body">
-                    <h5>{eachBeer.name}</h5>
-                    <h6>{eachBeer.tagline}</h6>
-                    <Link to = {`/beers/${eachBeer._id}`}>
-                            <button className="btn btn-danger btn-sm">Check it out!</button>
-                    </Link>
+            <Fragment>
+                <div className="card col-10 offset-1 col-md-4 offset-md-1 mt-5 one-beer" key={eachBeer._id}>
+                    <img src={eachBeer.image_url} className="card-img-top mx-auto" alt={"Picture of " + eachBeer.name} />
+                    <div className="card-body">
+                        <h5>{eachBeer.name}</h5>
+                        <h6>{eachBeer.tagline}</h6>
+                        <Link to = {`/beers/${eachBeer._id}`}>
+                                <button className="btn btn-danger btn-sm">Check it out!</button>
+                        </Link>
+                    </div>
                 </div>
-            </div>
+                <div className="col-0 col-md-1"></div>
+            </Fragment>
             )
         })
     }
@@ -73,12 +76,11 @@ export default class AllBeers extends Component {
             console.log(this.state.beers);
             return (
                 <div>
-                <nav className="navbar navbar-dark bg-primary">
-                <Link to = {'/'}>
-                    <button className="btn btn-outline-success" type="button">Home</button>
-                </Link>
-                </nav>
                 <div className="container-fluid all-the-beers">
+                <Link to = {'/'}>
+                    <button className="btn btn-secondary mt-4" type="button">Home</button>
+                </Link>
+                <h1 className="page-title">Ironbeers</h1>
                     <div className="row">
                         {this.displayBeers()}
                     </div>
@@ -95,7 +97,11 @@ export default class AllBeers extends Component {
                 </div>  
             )
         } else{
-            return(<h1> Pouring...</h1>)
+            return(
+                <div className="container-fluid all-the-beers">
+                    <h1 className="page-title"> Pouring...</h1>
+                </div>
+            )
         }
               
     }

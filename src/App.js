@@ -28,8 +28,10 @@ class App extends Component {
             <SingleBeer
             {...props}
             />}/>
-            <Route exact path="/newbeer" render = {() => 
-            <NewBeer/>}/>
+            <Route exact path="/newbeer" render = {(props) => 
+            <NewBeer
+              {...props}
+            />}/>
         </Switch>
       </div>
     );

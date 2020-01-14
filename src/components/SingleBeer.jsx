@@ -51,7 +51,7 @@ export default class SingleBeer extends Component {
     }
     displayBeer = () => {
         return (
-        <div className="container-fluid">
+        <div className="container-fluid one-beer">
             <div className="row">
                 <div className="col-12 col-lg-5 beer-image">
                     <img src={this.state.beer.image_url}  alt={"Picture of " + this.state.beer.name} />
@@ -90,18 +90,17 @@ export default class SingleBeer extends Component {
     render() {
         if (this.state.ready){
             return (
-                <div>
-                    <nav className="navbar navbar-dark bg-primary">
-                        <Link to = {'/'}>
-                            <button className="btn btn-outline-success" type="button">Home</button>
-                        </Link>
-                    </nav>
+                <div className="all-the-beers">
+                    <Link to = {'/'}>
+                        <button className="btn btn-secondary mt-4" type="button">Home</button>
+                    </Link>
+                    <h1 className="page-title">Ironbeers</h1>
                     {this.displayBeer()}
                 </div>
             )
         } else {
             return (
-                <h1>Pouring...</h1>
+                <h1 className="page-title">Pouring...</h1>
             )
         }
     }

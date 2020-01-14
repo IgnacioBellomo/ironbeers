@@ -7,6 +7,7 @@ export default class HomeScreen extends Component {
     render() {
         return (
             <div className="container-fluid home-screen">
+                <h1 className="page-title">Ironbeers</h1>
                 <div className="row">
                     <div className="col-12 col-lg-6 beer-pic">
                         <img src="../images/beers.png" alt="all beers"/>

@@ -13,17 +13,10 @@ export default class NewBeer extends Component {
         attenuationLevel: 0,
         contributedBy: "",
     }
-    // name - must be type text
-    // tagline - must be type text
-    // description - must be type text
-    // first_brewed - must be type text
-    // brewers_tips - must be type text
-    // attenuation_level - must be type number !!!
-    // contributed_by - must be type text
-    addNewBeer = (e) => {
+    addNewBeer = async (e) => {
         e.preventDefault()
         let url = 'https://ih-beers-api2.herokuapp.com/beers/new';
-        axios.post(url, {
+        let newBeer = await axios.post(url, {
             name: this.state.name,
             tagline: this.state.tagline,
             description: this.state.description,
@@ -31,13 +24,10 @@ export default class NewBeer extends Component {
             brewers_tips: this.state.brewersTips,
             attenuation_level: this.state.attenuationLevel,
             contributed_by: this.state.contributedBy
-        }).then((result) => {
-            console.log(result)
         }).catch((err) => {
             console.log(err)
-        }, () => {
-            this.props.history.push('/beers');
-        })
+        });
+        this.props.history.push('/beers');
     }
 
     updateField = (e) =>{
@@ -48,45 +38,45 @@ export default class NewBeer extends Component {
 
     render() {
         return (
-            <div>
-            <nav className="navbar navbar-dark bg-primary">
+            <div className="new-beer-form">
             <Link to = {'/'}>
-                <button className="btn btn-outline-success" type="button">Home</button>
+                <button className="btn btn-secondary mt-4" type="button">Home</button>
             </Link>
-            </nav>
+            <h1 className="page-title">Ironbeers</h1>
             <div className="container-fluid">
+                <h3 className="page-title2">New Beer</h3>
                 <div className="row">
-                    <div className="col-12 new-beer-form">
-                        <form onSubmit={this.addNewBeer} id="newBeerForm">
+                    <div className="col-10 offset-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3">
+                        <form onSubmit={this.addNewBeer} id="newBeerForm" className="pb-4">
                             <div className="form-group">
-                                <label htmlFor="name">Name</label>
+                                <div className="page-title3" >Name</div>
                                 <input onChange={this.updateField} type="text" className="form-control" value={this.state.name} name="name"/>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="tagline">Tagline</label>
+                                <div className="page-title3">Tagline</div>
                                 <input onChange={this.updateField} type="text" className="form-control" value={this.state.tagline} name="tagline"/>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="description">Description</label>
+                                <div className="page-title3">Description</div>
                                 <textarea onChange={this.updateField} className="form-control" value={this.state.description} name="description" rows="3"></textarea>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="firstBrewed">First Brewed</label>
+                                <div className="page-title3">First Brewed</div>
                                 <input onChange={this.updateField} type="text" className="form-control" value={this.state.firstBrewed} name="firstBrewed"/>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="brewersTips">Brewer's Tips</label>
+                                <div className="page-title3">Brewer's Tips</div>
                                 <input onChange={this.updateField} type="text" className="form-control" value={this.state.brewersTips} name="brewersTips"/>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="attenuationLevel">Attenuation Level</label>
+                                <div className="page-title3">Attenuation Level</div>
                                 <input onChange={this.updateField} type="number" className="form-control" value={this.state.attenuationLevel} name="attenuationLevel"/>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="contributeBy">Contributed By</label>
+                                <div className="page-title3">Contributed By</div>
                                 <input onChange={this.updateField} type="text" className="form-control" value={this.state.contributedBy} name="contributedBy"/>
                             </div>
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn btn-danger">Add beer!</button>
                         </form>
                     </div>
                 </div>
